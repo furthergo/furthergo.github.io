@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/furthergo/2020/06/07/what-is-autoclosure/</loc>
+    
+    <lastmod>2020-08-04T12:34:30.051Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/furthergo/2020/06/05/virtual-memory/</loc>
     
     <lastmod>2020-08-04T12:32:59.657Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://github.com/furthergo/2020/06/05/HowandWhyLaunch/</loc>
     
     <lastmod>2020-06-07T12:22:06.295Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://github.com/furthergo/2020/06/07/what-is-autoclosure/</loc>
-    
-    <lastmod>2020-06-07T12:20:19.707Z</lastmod>
     
   </url>
   
