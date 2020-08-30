@@ -52,7 +52,12 @@
 <p><a href="https://github.com/jonhoo/drwmutex">DRWMutex</a> 是一个go实现的分布式读写锁，它维护了一个锁的数组，根据core id为每个核心提供独立的锁，提升读效率。这里在真正的锁前面加了一个长度为8的uint64数组，刚好64B，确保每个paddedRWMutex不会落在同一个cache line上，避免产生False sharing.</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>CPU cache是CPU提升访问速度非常重要的硬件资源，根据程序的局部性原理，绝大多数的访问都会发生在cache上，并且由于访问速度的差异，应该发生在cache。因此编写cache友好的程序对于提升运行速度有重要的作用。另一方面，在多线程的场景里，避免False sharing是另一个提升程序性能的重要手段，需要很好的理解CPU cache的工作原理来避免False sharing的产生。</p>
 <h2 id="What’s-more"><a href="#What’s-more" class="headerlink" title="What’s more?"></a>What’s more?</h2><p>文章开头给出的例子里，MATRIXSIZE和GOROUTINENUM我都没有贴出来，感兴趣的可以自己试一下不同的值对于性能差异的影响，并思考一下为什么？</p>
-<p>欢迎在评论区留言讨论</p>
+<p>欢迎在评论区留言讨论~</p>
+<p>#</p>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://www.youtube.com/watch?v=WDIkqP4JbkE&list=WL&index=2&t=1712s" target="_blank" rel="noopener">code::dive conference 2014 - Scott Meyers: Cpu Caches and Why You Care</a> </li>
+</ol>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">furthergo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://github.com/furthergo/2020/08/30/cpu-cache-and-false-sharing/">https://github.com/furthergo/2020/08/30/cpu-cache-and-false-sharing/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/OS/">OS</a><a class="post-meta__tags" href="/tags/How-Why/">How&amp;Why</a></div><nav id="pagination"><div class="next-post pull-right"><a href="/2020/06/07/what-is-autoclosure/"><span>什么是@autoclosure</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
   clientID: '5172c31ed5ec5462891c',
   clientSecret: '2a57ab34b48ff0d860dd57f70547e3416ebe0d85',
