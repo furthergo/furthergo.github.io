@@ -4,43 +4,89 @@
   <url>
     <loc>https://github.com/furthergo/2020/08/30/cpu-cache-and-false-sharing/</loc>
     
-    <lastmod>2020-08-30T11:09:27.018Z</lastmod>
+    <lastmod>2020-08-30</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/furthergo/2020/06/07/what-is-autoclosure/</loc>
     
-    <lastmod>2020-08-04T12:34:30.051Z</lastmod>
+    <lastmod>2020-08-04</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/furthergo/2020/06/05/virtual-memory/</loc>
     
-    <lastmod>2020-08-04T12:32:59.657Z</lastmod>
+    <lastmod>2020-08-04</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/furthergo/2020/06/05/HowandWhyLaunch/</loc>
     
-    <lastmod>2020-06-07T12:22:06.295Z</lastmod>
+    <lastmod>2020-06-07</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/furthergo/tags/index.html</loc>
     
-    <lastmod>2020-06-07T09:47:42.632Z</lastmod>
+    <lastmod>2020-06-07</lastmod>
     
   </url>
   
   <url>
     <loc>https://github.com/furthergo/categories/index.html</loc>
     
-    <lastmod>2020-06-05T06:57:31.560Z</lastmod>
+    <lastmod>2020-06-05</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>https://github.com/furthergo</loc>
+    <lastmod>2020-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://github.com/furthergo/tags/swift/</loc>
+    <lastmod>2020-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/furthergo/tags/OS/</loc>
+    <lastmod>2020-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/furthergo/tags/CSAPP/</loc>
+    <lastmod>2020-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/furthergo/tags/How-Why/</loc>
+    <lastmod>2020-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://github.com/furthergo/categories/How-Why/</loc>
+    <lastmod>2020-08-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
