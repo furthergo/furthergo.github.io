@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://github.com/furthergo/2020/08/30/cpu-cache-and-false-sharing/</loc>
+    <loc>https://furthergo.github.io/2020/08/30/cpu-cache-and-false-sharing/</loc>
     
     <lastmod>2020-08-30</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/2020/06/07/what-is-autoclosure/</loc>
+    <loc>https://furthergo.github.io/2020/06/07/what-is-autoclosure/</loc>
     
     <lastmod>2020-08-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/2020/06/05/virtual-memory/</loc>
+    <loc>https://furthergo.github.io/2020/06/05/virtual-memory/</loc>
     
     <lastmod>2020-08-04</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/2020/06/05/HowandWhyLaunch/</loc>
+    <loc>https://furthergo.github.io/2020/06/05/HowandWhyLaunch/</loc>
     
     <lastmod>2020-06-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/tags/index.html</loc>
+    <loc>https://furthergo.github.io/tags/index.html</loc>
     
     <lastmod>2020-06-07</lastmod>
     
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/categories/index.html</loc>
+    <loc>https://furthergo.github.io/categories/index.html</loc>
     
     <lastmod>2020-06-05</lastmod>
     
@@ -45,37 +45,37 @@
   
 
   <url>
-    <loc>https://github.com/furthergo</loc>
-    <lastmod>2020-08-30</lastmod>
+    <loc>https://furthergo.github.io/</loc>
+    <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://github.com/furthergo/tags/swift/</loc>
-    <lastmod>2020-08-30</lastmod>
+    <loc>https://furthergo.github.io/tags/swift/</loc>
+    <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/tags/OS/</loc>
-    <lastmod>2020-08-30</lastmod>
+    <loc>https://furthergo.github.io/tags/OS/</loc>
+    <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/tags/CSAPP/</loc>
-    <lastmod>2020-08-30</lastmod>
+    <loc>https://furthergo.github.io/tags/CSAPP/</loc>
+    <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://github.com/furthergo/tags/How-Why/</loc>
-    <lastmod>2020-08-30</lastmod>
+    <loc>https://furthergo.github.io/tags/How-Why/</loc>
+    <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -83,8 +83,8 @@
 
   
   <url>
-    <loc>https://github.com/furthergo/categories/How-Why/</loc>
-    <lastmod>2020-08-30</lastmod>
+    <loc>https://furthergo.github.io/categories/How-Why/</loc>
+    <lastmod>2020-08-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
