@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://furthergo.github.io/weekly-algorithm-20200905/</loc>
+    
+    <lastmod>2020-09-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://furthergo.github.io/cpu-cache-and-false-sharing/</loc>
     
     <lastmod>2020-08-30</lastmod>
@@ -46,7 +53,7 @@
 
   <url>
     <loc>https://furthergo.github.io/</loc>
-    <lastmod>2020-08-31</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -54,28 +61,28 @@
   
   <url>
     <loc>https://furthergo.github.io/tags/swift/</loc>
-    <lastmod>2020-08-31</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://furthergo.github.io/tags/OS/</loc>
-    <lastmod>2020-08-31</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://furthergo.github.io/tags/CSAPP/</loc>
-    <lastmod>2020-08-31</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://furthergo.github.io/tags/How-Why/</loc>
-    <lastmod>2020-08-31</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -84,7 +91,7 @@
   
   <url>
     <loc>https://furthergo.github.io/categories/How-Why/</loc>
-    <lastmod>2020-08-31</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
