@@ -8,6 +8,7 @@ keywords:
     - Ones And Zeros
     - Predict the Winner
     - Target Sum
+	- Longest Palindromic Subsequence
     - Minimax
     - Dynamic Programming
     - knapsack Algorithm
@@ -256,3 +257,97 @@ func findTargetSumWays(nums []int, S int) int {
 ```
 
 这里当S超过了最大或最小的可能时，直接返回0。
+
+# [Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/)
+```
+给定一个字符串str，求这个字符串的最长回文子序列的长度是多少？
+比如输入bbbab
+输入：4
+最长回文子序列是bbbb
+```
+
+## 分析
+DP经典题目，最重要的还是寻找状态转移方程，我们用`s(i,j)代表字符串从index i到j的范围内最长回文子序列`，`f(i,j)代表s(i,j)的长度`，下面来分析求解s(i,j)和f(i,j)的过程
+
+1. 假如`str[i]==str[j]`，那么表示对于要求的s(i,j)，我们可以在s(i+1,j-1)的两端分别添加str[i]和str[j]，这样能组成最长回文子序列即s(i,j)
+2. 可以得出从i到j的字符串的最长回文子序列的长度 `f(i,j) = f(i+1,j-1) + 2`
+
+以上是str[i]==str[j]的情况，假如str[i] != str[j]呢？
+
+3. 即对于我们要求的s(i, j)来说，由于`str[i] != str[j]`，那么`不可能同时在s(i+1,j-1)的两端添加str[i]和str[j]`来构成s(i,j)
+4. 要么str[i]添加进s(i+1,j-1)的左边，要么str[j]添加进s(i+1,j-1)的右边，同时我们不知道这种添加是否会破坏s(i+1,j-1)的回文特性，所以不能直接用f(i+1, j-1)+1
+5. 则对于这两种情况我们分别需要重新计算s(i, j-1)和s(i+1, j)。
+
+最终可以得出 f(i,j) = max{f(i+1, j-1)&&str[i]==str[j], f(i,j-1), f(i+1,j)}，其中当str[i]==str[j]时，f(i+1, j-1)+2一定是最大的
+
+## 求解
+用dp[i][j]代表f(i,j)，由于dp[i][j]依赖dp[i+1][j-1]和dp[i+1][j]，我们i从右开始遍历，j从左开始遍历，实现代码如下：
+```golang
+//省略max函数定义
+func longestPalindromeSubseq(s string) int {
+	n := len(s)
+	dp := make([][]int, n)
+	for i := 0; i < n; i++ {
+		dp[i] = make([]int, n)
+		dp[i][i] = 1
+	}
+	for i := n - 2; i >= 0; i-- {
+		for j := i + 1; j < n; j++ {
+			if s[i] == s[j] {
+				dp[i][j] = dp[i+1][j-1] + 2
+			} else {
+				dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+			}
+		}
+	}
+	return dp[0][n-1]
+}
+```
+其中dp[i][i]=1，代表只有str[i]一个字符。
+
+## 优化
+观察dp[i][j]的求解可以看出，依赖当前行j-1的状态，同时依赖下一行相同位置j和左边j-1的状态，因此我们需要两行数组来存储下一行和当前行的状态。优化代码如下:
+```golang
+// 省略max函数定义
+func longestPalindromeSubseq(s string) int {
+	n := len(s)
+	if n == 1 {
+		return 1
+	}
+	dp := make([]int, n)
+	nextlineDp := make([]int, n)
+	nextlineDp[n-1] = 1
+	for i := n - 2; i >= 0; i-- {
+		dp[i] = 1
+		for j := i + 1; j < n; j++ {
+			if s[i] == s[j] {
+				dp[j] = nextlineDp[j-1] + 2
+			} else {
+				dp[j] = max(nextlineDp[j], dp[j-1])
+			}
+		}
+		for j := i; j < n; j++ { // 更新下一行的状态
+			nextlineDp[j] = dp[j]
+		}
+	}
+	return dp[n-1]
+}
+```
+最近发现通过观察代码来优化空间复杂度往往更简单，因为i+1,i-1这种表示更直观，不过还是想从原理的角度来分析一下优化的原理，以这道题为例：
+```golang
+// f(i,j) = max{f(i+1, j-1)&&str[i]==str[j], f(i,j-1), f(i+1,j)}
+if s[i] == s[j] {
+	dp[i][j] = dp[i+1][j-1] + 2
+} else {
+	dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+}
+```
+dp是一个矩阵，当求dp[i][j]时，很容易知道只依赖i+1行的状态，所以第一步space从O(n^2)到O(2n)，再其次
+1. 第i行依赖当前行左边的数据
+2. 第i行依赖i+1左边的数据和当前位置的数据
+
+由1我们知道当前行比如从左往右开始求解，再加上2，还依赖i+1左边的数据，则不能用当前行来保存i+1行的左边的状态，因为会被当前行覆盖掉，所以这道题最少需要两个一维数组来存储求解的子状态。
+
+对于一些状态转移方程比如`dp[i][j] = max(dp[i-1][j-1], dp[i-1][j])`和`dp[i][j] = max(dp[i][j-1], dp[i-1][j])`这种，我们只单个依赖当前行或者上一行左边的状态，就可以用当前行来存储上一行左边的状态，即`dp[j]=max(dp[j-1],dp[j])`当前行从右边开始遍历和`dp[j]=max(dp[j-1],dp[j])`当前行从左边开始遍历。
+
+总结一下就是当不会依赖两行的同一位置的状态时，space可以优化到O(n)一个一维数组。
