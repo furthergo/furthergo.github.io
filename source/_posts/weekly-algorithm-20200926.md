@@ -1,19 +1,18 @@
 ---
 title: weekly-algorithm-20200926
 tags:
-    - algorithm
+  - algorithm
 categories:
-    - Weekly Algorithm
+  - Weekly Algorithm
 keywords:
-    - Ones And Zeros
-    - Predict the Winner
-    - Target Sum
-	- Longest Palindromic Subsequence
-	- Out of Boundary Paths
-    - Minimax
-    - Dynamic Programming
-    - knapsack Algorithm
+  - Ones And Zeros
+  - Predict the Winner
+  - Target Sum
+  - Longest Palindromic Subsequence
+  - Out of Boundary Paths - Minimax - Dynamic Programming - knapsack Algorithm
+date: 2020-09-25 22:12:14
 ---
+
 
 # 总结
 本周一共刷了5道medium，巩固了一下背包算法，以及了解了一下Minimax算法的含义和使用场景。
