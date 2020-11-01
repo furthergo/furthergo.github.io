@@ -57,6 +57,7 @@ Go的并发编程使用的是goroutine，Memory Model就是定义多个goroutine
 > 在修改通过多个goroutine并发访问的数据时，必须保证访问的串行执行
 
 注：这里Go建议使用channel保证串行并发访问，这也是Go的一个CSP模型的实现：**Do not communicate by sharing memory; instead, share memory by communicating.**，**通过通信来共享内存，而不是通过共享内存来进行通信**
+
 ## Happen Before
 为了保证这种读写顺序的执行，Go定义了一个叫做Happen Before的概念：
 > 在Go程序中一部分执行内存操作的执行顺序

@@ -94,6 +94,9 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: melody
+markdown:
+  plugins:
+    - hexo-math
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

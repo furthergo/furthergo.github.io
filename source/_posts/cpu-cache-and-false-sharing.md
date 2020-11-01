@@ -12,6 +12,7 @@ date: 2020-08-30 19:00:44
 # 例子
 我们先看两个例子，操作对象是一个MATRIXSIZE*8的整型矩阵。
 （具体Benchmark代码已经上传到[GitHub](https://github.com/furthergo/cache-line-test)上，有兴趣的可以拉下来自己测试一下）
+
 ## 一、遍历矩阵
 分别以行优先和列优先来遍历：
 ```go
@@ -119,7 +120,9 @@ BenchmarkMatrixEvenByLocal-12       	   46527	     25937 ns/op
 可以看出使用了local variable的比直接操作res数组快了将近一半。
 
 下面我们来分析一下为什么几乎完全一样的代码，会产生上面两种差异呢？在分析差异之前，先介绍一些基础知识。
+
 # CPU cache
+
 ## 什么是CPU cache？ 
 摘抄一段wiki的解释：
 `A CPU cache is a hardware cache used by the central processing unit (CPU) of a computer to reduce the average cost (time or energy) to access data from the main memory.` 即CPU cache是用来节省CPU访问主存时的平均消耗的一种硬件缓存。事实上CPU cache有三种通用的类型：
@@ -128,6 +131,7 @@ BenchmarkMatrixEvenByLocal-12       	   46527	     25937 ns/op
 3. Translation lookaside buffer (TLB): 存储VA到PA映射的cache，主要是用来加速地址翻译
 
 这里我们主要讨论D-Cache和I-Cache。
+
 ## CPU Cache hierarchy
 通常CPU的cache是分多个等级：L1，L2和L3，其中L1 cache分为L1 D-cache和L1 I-Cache。其中L1和L2 cache是每个CPU核独享的，L3 cache是多核共享的。以MBP上的6-Core Intel Core i7为例，我们使用 `sysctl -a | grep cache` 可以看到，L1的D-cache和I-cache分别是32KB，L2 cache是256KB，L3 cache是12MB：
 ```shell

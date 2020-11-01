@@ -7,7 +7,8 @@ categories:
 keywords:
     - Longest Common Prefix
     - Guess Number Higher or Lower II
-    - 
+    - Wiggle Subsequence
+    - Can I Win
 ---
 
 # 总结
@@ -16,4 +17,6 @@ keywords:
 
 # [Guess Number Higher or Lower II](https://leetcode.com/problems/guess-number-higher-or-lower-ii/)
 
-# [	Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
+# [Wiggle Subsequence](https://leetcode.com/problems/wiggle-subsequence/)
+
+# [Can I Win](https://leetcode.com/problems/can-i-win/)
