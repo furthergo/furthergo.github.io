@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="RSA的数学知识"><meta name="keywords" content=""><meta name="author" content="furthergo"><meta name="copyright" content="furthergo"><title>RSA的数学知识 | furthergo</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.8.2"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.8.2"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.8.2"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><meta name="google-site-verification" content="oQkdLBTArbDoNq8FA6P9TiTYGdELfAVbSvkRTq9Heps"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  hexoVersion: '4.2.1'
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#费马小定理"><span class="toc-number">1.</span> <span class="toc-text">费马小定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉函数"><span class="toc-number">2.</span> <span class="toc-text">欧拉函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉定理"><span class="toc-number">3.</span> <span class="toc-text">欧拉定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa"><span class="toc-number">4.</span> <span class="toc-text">RSA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa证明"><span class="toc-number">5.</span> <span class="toc-text">RSA证明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa安全性分析"><span class="toc-number">6.</span> <span class="toc-text">RSA安全性分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉定理的证明"><span class="toc-number">7.</span> <span class="toc-text">欧拉定理的证明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#同余类"><span class="toc-number">7.1.</span> <span class="toc-text">同余类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完全剩余系"><span class="toc-number">7.2.</span> <span class="toc-text">完全剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最小非负完全剩余系"><span class="toc-number">7.3.</span> <span class="toc-text">最小非负完全剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩剩余系"><span class="toc-number">7.4.</span> <span class="toc-text">缩剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#证明"><span class="toc-number">7.5.</span> <span class="toc-text">证明</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.JPG"></div><div class="author-info__name text-center">furthergo</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/furthergo" target="_blank" rel="noopener">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">13</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">8</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/1.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">furthergo</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/sitemap.xml || sitemap">Sitemap</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">RSA的数学知识</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math/">math</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="费马小定理">费马小定理</h1>
+<p><span class="math display">\[
+a^p \bmod p = a
+\]</span> 其中p为素数</p>
+<h1 id="欧拉函数">欧拉函数</h1>
+<p><span class="math inline">\(\varphi(n)\)</span>代表小于等于n的所有与n互质的正整数。 <span class="math display">\[
+\varphi(pq) = \varphi(p)*\varphi(q) = (p-1)*(q-1)
+\]</span> 其中pq为素数。 更通用的求解： <span class="math display">\[
+\varphi(n) = n\displaystyle\prod_{p|n}(1-\frac{1}{p})
+\]</span> <a id="more"></a></p>
+<h1 id="欧拉定理">欧拉定理</h1>
+<p><span class="math display">\[
+a^{\varphi(n)} \equiv 1 \bmod n
+\]</span> 其中a与n互质</p>
+<h1 id="rsa">RSA</h1>
+<ol type="1">
+<li>生成pq，生成n=pq</li>
+<li><span class="math inline">\(r=\varphi(n)=\varphi(pq)=(p-1)(q-1)\)</span></li>
+<li>找一个小于r的数e</li>
+<li>求e关于r的模逆元b，即<span class="math inline">\(eb \equiv 1 \bmod r\)</span></li>
+<li>加密：<span class="math inline">\(m=x^e \bmod n\)</span></li>
+<li>解密：<span class="math inline">\(x=m^b \bmod n\)</span></li>
+</ol>
+<h1 id="rsa证明">RSA证明</h1>
+<p><span class="math display">\[
+m^b \bmod n = 
+\]</span> <span class="math display">\[
+x^{eb} \bmod n = 
+\]</span> <span class="math display">\[
+x*x^{eb - 1} \bmod n = 
+\]</span> <span class="math display">\[
+x*x^{kr} \bmod n = 
+\]</span> <span class="math display">\[
+x\bmod n * ((x^r \bmod n)^k \bmod n) = 
+\]</span> <span class="math display">\[
+x\bmod n *((1\bmod n)^k \bmod n) = 
+\]</span> <span class="math display">\[
+x \bmod n = 
+\]</span> <span class="math display">\[
+x
+\]</span></p>
+<h1 id="rsa安全性分析">RSA安全性分析</h1>
+<p>公开的：e，n，m 私有的：b，x，p，q，r 分解n为两个大素数p，q，不存在非多项式时间的解，因此无法求出r，无法求出b</p>
+<h1 id="欧拉定理的证明">欧拉定理的证明</h1>
+<p>证明 <span class="math display">\[
+a^{\varphi(n)} \equiv 1 \bmod n
+\]</span></p>
+<h2 id="同余类">同余类</h2>
+<p>模n余数相同的数构成一个模n的同余类。</p>
+<h2 id="完全剩余系">完全剩余系</h2>
+<p>从n的同余类中，各取一个数，构成的集合。</p>
+<h2 id="最小非负完全剩余系">最小非负完全剩余系</h2>
+<p>{0, 1, ..., n-1}是n的最小非负完全剩余系。</p>
+<h2 id="缩剩余系">缩剩余系</h2>
+<p>完全剩余系中所有与n互质的数，构成n的缩剩余系，其个数即为<span class="math inline">\(\varphi(n)\)</span>。</p>
+<p>当这个完全剩余系是最小非负完全剩余系时，构成n的最小正缩系。</p>
+<h2 id="证明">证明</h2>
+<ul>
+<li><span class="math inline">\(\phi(n)\)</span> = {<span class="math inline">\(c_1\)</span>, <span class="math inline">\(c_2\)</span>, ..., <span class="math inline">\(c_{\varphi(n)}\)</span>}代表模n的最小正缩系。</li>
+<li><span class="math inline">\(a\phi(n)\)</span>代表<span class="math inline">\(\phi(n)\)</span>中的每个数乘以a，则<span class="math inline">\(a\phi(n)\)</span> = {<span class="math inline">\(ac_1\)</span>, <span class="math inline">\(ac_2\)</span>, ..., <span class="math inline">\(ac_{\varphi(n)}\)</span>}是模n的缩剩余系。其中a与n互质
+<ul>
+<li>任意<span class="math inline">\(ac_i\)</span>和<span class="math inline">\(ac_j\)</span>模n的余数不相同：假如相同，因为a与n互质，根据消去律能得到<span class="math inline">\(c_i \equiv c_j \bmod n\)</span>，</li>
+<li>任意<span class="math inline">\(ac_i\)</span>与n互质</li>
+</ul></li>
+<li>对于任意缩系，所有数模n之后的余数构成n的最小正缩系</li>
+<li>则有<span class="math inline">\(\displaystyle\prod_{i=1}^{\varphi(n)}ac_i \equiv \displaystyle\prod_{i=1}^{\varphi(n)}c_i \bmod n\)</span></li>
+<li>则有<span class="math inline">\(a^{\varphi(n)}\displaystyle\prod_{i=1}^{\varphi(n)}c_i \equiv \displaystyle\prod_{i=1}^{\varphi(n)}c_i \bmod n\)</span>；因为任意<span class="math inline">\(c_i\)</span>与n互质，则<span class="math inline">\(\displaystyle\prod_{i=1}^{\varphi(n)}c_i\)</span>与n互质</li>
+<li>根据消去律得：<span class="math inline">\(a^{\varphi(n)} \equiv 1 \bmod n\)</span></li>
+</ul>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">furthergo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://furthergo.github.io/rsa/">https://furthergo.github.io/rsa/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"></div><nav id="pagination"><div class="next-post pull-right"><a href="/redo-merge-after-revert/"><span>如何再次合并已经被revert的合并？</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: '5172c31ed5ec5462891c',
+  clientSecret: '2a57ab34b48ff0d860dd57f70547e3416ebe0d85',
+  repo: 'furthergo.github.io',
+  owner: 'furthergo',
+  admin: 'furthergo',
+  id: md5(decodeURI(location.pathname)),
+  language: 'en'
+})
+gitalk.render('gitalk-container')</script></div></div><footer class="footer-bg" style="background-image: url(/img/1.jpg)"><div class="layout" id="footer"><div class="copyright">&copy;2020 By furthergo</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody" target="_blank" rel="noopener"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.8.2"></script><script src="/js/fancybox.js?version=1.8.2"></script><script src="/js/sidebar.js?version=1.8.2"></script><script src="/js/copy.js?version=1.8.2"></script><script src="/js/fireworks.js?version=1.8.2"></script><script src="/js/transition.js?version=1.8.2"></script><script src="/js/scroll.js?version=1.8.2"></script><script src="/js/head.js?version=1.8.2"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  CommonHTML: {
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "HTML-CSS": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  },
+  "SVG": { 
+    linebreaks: { automatic: true, width: "90% container" }
+  }
+});
+</script><script type="text/x-mathjax-config">MathJax.Hub.Queue(function() {
+  var all = MathJax.Hub.getAllJax(), i;
+  for (i=0; i < all.length; i += 1) {
+    all[i].SourceElement().parentNode.className += ' has-jax';
+  }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
+}</script></body></html>
