@@ -8,7 +8,7 @@
     noSupport: 'The browser does not support'
   },
   hexoVersion: '4.2.1'
-} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#费马小定理"><span class="toc-number">1.</span> <span class="toc-text">费马小定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉函数"><span class="toc-number">2.</span> <span class="toc-text">欧拉函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉定理"><span class="toc-number">3.</span> <span class="toc-text">欧拉定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa"><span class="toc-number">4.</span> <span class="toc-text">RSA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa证明"><span class="toc-number">5.</span> <span class="toc-text">RSA证明</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa安全性分析"><span class="toc-number">6.</span> <span class="toc-text">RSA安全性分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉定理的证明"><span class="toc-number">7.</span> <span class="toc-text">欧拉定理的证明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#同余类"><span class="toc-number">7.1.</span> <span class="toc-text">同余类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完全剩余系"><span class="toc-number">7.2.</span> <span class="toc-text">完全剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最小非负完全剩余系"><span class="toc-number">7.3.</span> <span class="toc-text">最小非负完全剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩剩余系"><span class="toc-number">7.4.</span> <span class="toc-text">缩剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#证明"><span class="toc-number">7.5.</span> <span class="toc-text">证明</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.JPG"></div><div class="author-info__name text-center">furthergo</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/furthergo" target="_blank" rel="noopener">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">13</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">8</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/1.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">furthergo</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/sitemap.xml || sitemap">Sitemap</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">RSA的数学知识</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math/">math</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="费马小定理">费马小定理</h1>
+} </script><meta name="generator" content="Hexo 4.2.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#费马小定理"><span class="toc-number">1.</span> <span class="toc-text">费马小定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉函数"><span class="toc-number">2.</span> <span class="toc-text">欧拉函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉定理"><span class="toc-number">3.</span> <span class="toc-text">欧拉定理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa"><span class="toc-number">4.</span> <span class="toc-text">RSA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa证明"><span class="toc-number">5.</span> <span class="toc-text">RSA证明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#m与n互质"><span class="toc-number">5.1.</span> <span class="toc-text">m与n互质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#m与n不互质"><span class="toc-number">5.2.</span> <span class="toc-text">m与n不互质</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rsa安全性分析"><span class="toc-number">6.</span> <span class="toc-text">RSA安全性分析</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#欧拉定理的证明"><span class="toc-number">7.</span> <span class="toc-text">欧拉定理的证明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#同余类"><span class="toc-number">7.1.</span> <span class="toc-text">同余类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完全剩余系"><span class="toc-number">7.2.</span> <span class="toc-text">完全剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最小非负完全剩余系"><span class="toc-number">7.3.</span> <span class="toc-text">最小非负完全剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缩剩余系"><span class="toc-number">7.4.</span> <span class="toc-text">缩剩余系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#证明"><span class="toc-number">7.5.</span> <span class="toc-text">证明</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.JPG"></div><div class="author-info__name text-center">furthergo</div><div class="author-info__description text-center"></div><div class="follow-button"><a href="https://github.com/furthergo" target="_blank" rel="noopener">Follow Me</a></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">13</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">8</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div id="top-container" style="background-image: url(/img/1.jpg)"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">furthergo</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page" href="/sitemap.xml || sitemap">Sitemap</a></span><span class="pull-right"></span></div><div id="post-info"><div id="post-title">RSA的数学知识</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2020-11-01</time><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/math/">math</a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="费马小定理">费马小定理</h1>
 <p><span class="math display">\[
 a^p \bmod p = a
 \]</span> 其中p为素数</p>
@@ -27,30 +27,78 @@ a^{\varphi(n)} \equiv 1 \bmod n
 <li>生成pq，生成n=pq</li>
 <li><span class="math inline">\(r=\varphi(n)=\varphi(pq)=(p-1)(q-1)\)</span></li>
 <li>找一个小于r的数e</li>
-<li>求e关于r的模逆元b，即<span class="math inline">\(eb \equiv 1 \bmod r\)</span></li>
-<li>加密：<span class="math inline">\(m=x^e \bmod n\)</span></li>
-<li>解密：<span class="math inline">\(x=m^b \bmod n\)</span></li>
+<li>求e关于r的模逆元d，即<span class="math inline">\(ed \equiv 1 \bmod r\)</span></li>
+<li>RSA组成
+<ul>
+<li>公钥：(e, n)</li>
+<li>私钥：(d, n)</li>
+<li>原文：m ([0-n-1])</li>
+<li>密文：c</li>
+</ul></li>
+<li>加密：，c为密文，<span class="math inline">\(c=m^e \bmod n\)</span></li>
+<li>解密：<span class="math inline">\(m=c^d \bmod n\)</span></li>
 </ol>
 <h1 id="rsa证明">RSA证明</h1>
+<h2 id="m与n互质">m与n互质</h2>
 <p><span class="math display">\[
-m^b \bmod n = 
+c^d \bmod n = 
 \]</span> <span class="math display">\[
-x^{eb} \bmod n = 
+m^{ed} \bmod n = 
 \]</span> <span class="math display">\[
-x*x^{eb - 1} \bmod n = 
+m*m^{ed - 1} \bmod n = 
 \]</span> <span class="math display">\[
-x*x^{kr} \bmod n = 
+m*m^{kr} \bmod n = 
 \]</span> <span class="math display">\[
-x\bmod n * ((x^r \bmod n)^k \bmod n) = 
+m\bmod n * ((m^r \bmod n)^k \bmod n) = 
+\]</span> 根据欧拉定理，因为m与n互质，则<span class="math inline">\(m^r \bmod n = 1\)</span>，则 <span class="math display">\[
+m\bmod n *((1\bmod n)^k \bmod n) = 
 \]</span> <span class="math display">\[
-x\bmod n *((1\bmod n)^k \bmod n) = 
+m \bmod n = 
 \]</span> <span class="math display">\[
-x \bmod n = 
+m
+\]</span></p>
+<h2 id="m与n不互质">m与n不互质</h2>
+<p>因为n=pq且pq是质数，则m=tp或者m=tq，这里假设m=tp，计算<span class="math inline">\(m^{ed} \bmod q\)</span> <span class="math display">\[
+m^{ed} \bmod q= 
 \]</span> <span class="math display">\[
-x
+(tp)^{ed} \bmod q = 
+\]</span> <span class="math display">\[
+(tp)^{kr+1} \bmod q = 
+\]</span> <span class="math display">\[
+(tp)^{k(p-1)(q-1)+1} \bmod q = 
+\]</span> <span class="math display">\[
+(tp)((tp)^{(q-1)})^{k(p-1)} \bmod q
+\]</span> 此时tp与q互质（反证法：若tp与q不互质，因为pq互质，则t与q不互质，因为q是质数，所以t=kq，即m=tp=kpq=kn，则m大于n，不满足条件m在[0-n-1]范围） 根据欧拉定理：<span class="math inline">\((tp)^{(q-1)} \equiv 1 \bmod q\)</span>，所以 <span class="math display">\[
+(tp)^{eb} \bmod q= 
+\]</span> <span class="math display">\[
+(tp)((tp)^{(q-1)})^{k(p-1)} \bmod q = 
+\]</span> <span class="math display">\[
+(tp) \bmod q
+\]</span></p>
+<p>所以， <span class="math display">\[
+(tp)^{ed} \equiv (tp) \bmod q
+\]</span> 即 <span class="math display">\[
+(tp)^{ed} = jq + tp
+\]</span> 又因为 <span class="math display">\[
+(tp)^{ed} \bmod p = 0
+\]</span> 所以 <span class="math display">\[
+(jq + tp) \bmod p = 0, 即 jq \bmod p = 0
+\]</span> 因为pq互质，所以 <span class="math display">\[
+j \bmod p = 0, 即 j = lp
+\]</span> 即 <span class="math display">\[
+(tp)^{ed} = jq + tp = lpq + tp = ln + tp
+\]</span> 所以 <span class="math display">\[
+(tp)^{ed} \bmod n = (ln+tp) \bmod n = tp \bmod n
+\]</span> 由假设m=tp，可证得： <span class="math display">\[
+m^{eb} \bmod n = m \bmod n = m
 \]</span></p>
 <h1 id="rsa安全性分析">RSA安全性分析</h1>
-<p>公开的：e，n，m 私有的：b，x，p，q，r 分解n为两个大素数p，q，不存在非多项式时间的解，因此无法求出r，无法求出b</p>
+<ul>
+<li>公开的：e，n，c</li>
+<li>私有的：d，m</li>
+<li>生成秘钥对后销毁 p，q，r</li>
+</ul>
+<p>分解n为两个大素数p，q，不存在非多项式时间的解，因此无法求出r，无法求出d</p>
 <h1 id="欧拉定理的证明">欧拉定理的证明</h1>
 <p>证明 <span class="math display">\[
 a^{\varphi(n)} \equiv 1 \bmod n
