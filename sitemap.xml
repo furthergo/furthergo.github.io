@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://furthergo.github.io/blog-share/</loc>
+    
+    <lastmod>2022-01-29</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://furthergo.github.io/weekly-algorithm-20201003/</loc>
     
     <lastmod>2022-01-29</lastmod>
@@ -171,6 +178,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://furthergo.github.io/tags/math/</loc>
+    <lastmod>2022-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -196,6 +210,13 @@
   
   <url>
     <loc>https://furthergo.github.io/categories/math/</loc>
+    <lastmod>2022-01-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://furthergo.github.io/categories/share/</loc>
     <lastmod>2022-01-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
