@@ -35,40 +35,112 @@ $$
 1. 生成pq，生成n=pq
 2. $r=\varphi(n)=\varphi(pq)=(p-1)(q-1)$
 3. 找一个小于r的数e
-4. 求e关于r的模逆元b，即$eb \equiv 1 \bmod r$
-5. 加密：$m=x^e \bmod n$
-6. 解密：$x=m^b \bmod n$
+4. 求e关于r的模逆元d，即$ed \equiv 1 \bmod r$
+5. RSA组成
+   * 公钥：(e, n)
+   * 私钥：(d, n)
+   * 原文：m ([0-n-1])
+   * 密文：c
+6. 加密：，c为密文，$c=m^e \bmod n$
+7. 解密：$m=c^d \bmod n$
 
 # RSA证明
+
+## m与n互质
 $$
-m^b \bmod n = 
-$$
-$$
-x^{eb} \bmod n = 
-$$
-$$
-x*x^{eb - 1} \bmod n = 
+c^d \bmod n = 
 $$
 $$
-x*x^{kr} \bmod n = 
+m^{ed} \bmod n = 
 $$
 $$
-x\bmod n * ((x^r \bmod n)^k \bmod n) = 
+m*m^{ed - 1} \bmod n = 
 $$
 $$
-x\bmod n *((1\bmod n)^k \bmod n) = 
+m*m^{kr} \bmod n = 
 $$
 $$
-x \bmod n = 
+m\bmod n * ((m^r \bmod n)^k \bmod n) = 
+$$
+根据欧拉定理，因为m与n互质，则$m^r \bmod n = 1$，则
+$$
+m\bmod n *((1\bmod n)^k \bmod n) = 
 $$
 $$
-x
+m \bmod n = 
+$$
+$$
+m
+$$
+
+## m与n不互质
+因为n=pq且pq是质数，则m=tp或者m=tq，这里假设m=tp，计算$m^{ed} \bmod q$
+$$
+m^{ed} \bmod q= 
+$$
+$$
+(tp)^{ed} \bmod q = 
+$$
+$$
+(tp)^{kr+1} \bmod q = 
+$$
+$$
+(tp)^{k(p-1)(q-1)+1} \bmod q = 
+$$
+$$
+(tp)((tp)^{(q-1)})^{k(p-1)} \bmod q
+$$
+此时tp与q互质（反证法：若tp与q不互质，因为pq互质，则t与q不互质，因为q是质数，所以t=kq，即m=tp=kpq=kn，则m大于n，不满足条件m在[0-n-1]范围）
+根据欧拉定理：$(tp)^{(q-1)} \equiv 1 \bmod q$，所以
+$$
+(tp)^{eb} \bmod q= 
+$$
+$$
+(tp)((tp)^{(q-1)})^{k(p-1)} \bmod q = 
+$$
+$$
+(tp) \bmod q
+$$
+
+所以，
+$$
+(tp)^{ed} \equiv (tp) \bmod q
+$$
+即
+$$
+(tp)^{ed} = jq + tp
+$$
+又因为
+$$
+(tp)^{ed} \bmod p = 0
+$$
+所以
+$$
+(jq + tp) \bmod p = 0, 即 jq \bmod p = 0
+$$
+因为pq互质，所以
+$$
+j \bmod p = 0, 即 j = lp
+$$
+即
+$$
+(tp)^{ed} = jq + tp = lpq + tp = ln + tp
+$$
+所以
+$$
+(tp)^{ed} \bmod n = (ln+tp) \bmod n = tp \bmod n
+$$
+由假设m=tp，可证得：
+$$
+m^{eb} \bmod n = m \bmod n = m
 $$
 
 # RSA安全性分析
-公开的：e，n，m
-私有的：b，x，p，q，r
-分解n为两个大素数p，q，不存在非多项式时间的解，因此无法求出r，无法求出b
+* 公开的：e，n，c
+* 私有的：d，m
+* 生成秘钥对后销毁 p，q，r
+  
+分解n为两个大素数p，q，不存在非多项式时间的解，因此无法求出r，无法求出d
 
 # 欧拉定理的证明
 证明
@@ -100,3 +172,7 @@ $$
 * 则有$\displaystyle\prod_{i=1}^{\varphi(n)}ac_i \equiv \displaystyle\prod_{i=1}^{\varphi(n)}c_i \bmod n$
 * 则有$a^{\varphi(n)}\displaystyle\prod_{i=1}^{\varphi(n)}c_i \equiv \displaystyle\prod_{i=1}^{\varphi(n)}c_i \bmod n$；因为任意$c_i$与n互质，则$\displaystyle\prod_{i=1}^{\varphi(n)}c_i$与n互质
 * 根据消去律得：$a^{\varphi(n)} \equiv 1 \bmod n$
+
+# 参考资料
+
+- [1] [https://tools.ietf.org/html/rfc8017](https://tools.ietf.org/html/rfc8017)
